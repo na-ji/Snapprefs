@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ import static de.robv.android.xposed.XposedHelpers.getParameterTypes;
 import static de.robv.android.xposed.XposedHelpers.setAdditionalInstanceField;
 
 public class HookSendList {
+    private static int loop = 0;
+    private static int count = 0;
 
     static void initSelectAll(final LoadPackageParam lpparam) {
         HookMethods.refreshPreferences();
@@ -32,9 +35,10 @@ public class HookSendList {
             @Override
             protected void afterHookedMethod(final MethodHookParam param) throws Throwable {
                 CheckBox selectAll;
+                final Context c;
                 try {
                     View title = (View) getObjectField(param.thisObject, Obfuscator.select.SENDTOFRAGMENT_VAR_TOPVIEW);
-                    Context c = (Context) callMethod(param.thisObject, "getActivity");
+                    c = (Context) callMethod(param.thisObject, "getActivity");
                     selectAll = getCheckbox(c);
                     RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
                     params.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -68,7 +72,8 @@ public class HookSendList {
                                 FriendSet = (Set) getObjectField(param.thisObject, Obfuscator.select.SENDTOFRAGMENT_VAR_SET); //in SendToFragment
                                 StoryList = (List) getObjectField(param.thisObject, Obfuscator.select.SENDTOFRAGMENT_VAR_ARRAYLIST);
                                 Class<?>[] types = getParameterTypes(friendList.toArray());
-                                for (int i = 0; i < types.length; i++) {
+                                count = 0;
+                                for (int i = loop * 50; i < types.length; i++) {
                                     Object thingToAdd = friendList.get(i);
                                     if (types[i].getCanonicalName().equals(Obfuscator.select.FRIEND_CLASS)) {
                                         if (set)
@@ -87,6 +92,19 @@ public class HookSendList {
                                             StoryList.remove(thingToAdd);
                                     } else {
                                         Logger.log("SnapPrefs: Unknown type value at: " + types[i].toString());
+                                    }
+                                    count++;
+                                    if (count == 50 || i + 1 == types.length) {
+                                        count = 0;
+                                        Logger.log("SnapPrefs: " + Integer.toString(loop * 50) + " - " + Integer.toString((loop+1) * 50) + " / " + types.length);
+                                        Toast.makeText(c, Integer.toString(loop * 50) + " - " + Integer.toString((loop+1) * 50) + " / " + types.length, Toast.LENGTH_SHORT).show();
+                                        if (!set) {
+                                            loop++;
+                                            if (loop * 50 > types.length) {
+                                                loop = 0;
+                                            }
+                                        }
+                                        break;
                                     }
                                 }
                                 callMethod(param.thisObject, Obfuscator.select.SENDTOFRAGMENT_ADDTOLIST);

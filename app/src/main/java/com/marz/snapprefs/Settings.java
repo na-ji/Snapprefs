@@ -84,7 +84,7 @@ public class Settings extends PreferenceFragment {
             public boolean onPreferenceClick(Preference preference) {
                 // Open a new activity asking the user to select a folder
                 final Intent chooserIntent = new Intent(getActivity(), DirectoryChooserActivity.class);
-                chooserIntent.putExtra(DirectoryChooserActivity.EXTRA_NEW_DIR_NAME, "Snapprefs");
+                //chooserIntent.putExtra(DirectoryChooserActivity.EXTRA_NEW_DIR_NAME, "Snapprefs");
                 startActivityForResult(chooserIntent, REQUEST_CHOOSE_DIR);
                 return true;
             }
@@ -97,7 +97,7 @@ public class Settings extends PreferenceFragment {
             public boolean onPreferenceClick(Preference preference) {
                 // Open a new activity asking the user to select a folder
                 final Intent chooserIntent = new Intent(getActivity(), DirectoryChooserActivity.class);
-                chooserIntent.putExtra(DirectoryChooserActivity.EXTRA_NEW_DIR_NAME, "Snapprefs");
+                //chooserIntent.putExtra(DirectoryChooserActivity.EXTRA_NEW_DIR_NAME, "Snapprefs");
                 startActivityForResult(chooserIntent, REQUEST_HIDE_DIR);
                 return true;
             }
