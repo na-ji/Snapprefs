@@ -8,7 +8,7 @@
     <string name="pref_debug_title">INFORMATIONS</string>
 
     <string name="pref_thanks_title">Thanks to</string>
-    <string name="pref_thanks_summary">stirante, P1ngu1n, manvir, elesbb, chiralcode, Yoganandh, bnalls33, cketti, ddmanfire, MikeOrtiz, sangmingming</string>
+    <string name="pref_thanks_summary">stirante, Mr. Yawnie, P1ngu1n, manvir, elesbb, chiralcode, Yoganandh, bnalls33, cketti, ddmanfire, MikeOrtiz, sangmingming</string>
     <string name="pref_donate_title">Donate</string>
     <string name="pref_donate_summary">Support me by buying some coffee using PayPal. Donations are highly appreciated.</string>
 
@@ -47,7 +47,7 @@
     <string name="pref_update_title">To get the latest updates</string>
     <string name="pref_update_summary">Add \'snapprefs\' on Snapchat</string>
     <string name="version_text">Version</string>
-    <string name="version_summary" translatable="false">Current version is: v1.6.4</string>
+    <string name="version_summary" translatable="false">Current version is: v1.6.5</string>
     <string name="general">General settings</string>
     <string name="saving">Saving settings</string>
     <string name="sharing">Sharing settings</string>
@@ -81,6 +81,10 @@
     <string name="pref_location_longitude_title">Longitude</string>
     <string name="pref_location_location_picker_title">HOW TO USE</string>
     <string name="pref_location_location_picker_summary">Upon opening the map from SC, LONG click on the desired location, preferably to the middle of the city to set the spoofed location.</string>
+    <string name="pref_speed_how_title">HOW TO USE</string>
+    <string name="pref_speed_how_summary">After typing in your desired speed (m/s), click on the speed filter to apply it.</string>
+    <string name="pref_weather_how_title">HOW TO USE</string>
+    <string name="pref_weather_how_summary">After typing in your desired value, you have to kill Snapchat, then restart to apply it.</string>
     <string name="pref_discover_summary_off">Discover will load and download</string>
     <string name="pref_discover_summary_on">Discover will NOT load NOR download</string>
     <string name="pref_discover_title">Block Discover snaps</string>
@@ -233,7 +237,7 @@
     <string name="nomedia_storage">Unable to write to the storage.</string>
 
     <!-- Dialogs -->
-    <string name="module_not_enabled">Snapshare is not enabled. Please enable it in Xposed Installer and reboot your device.</string>
+    <string name="module_not_enabled">Snapprefs is not enabled. Please enable it in Xposed Installer and reboot your device.</string>
     <string name="size_error">"The video you shared is too large (%1$s), it probably won't send. Snapshat only supports files up to %2$s."</string>
     <string name="unable_open_xposed">Unable to open Xposed Installer, is it installed?</string>
 
@@ -273,7 +277,7 @@
 
     <!-- Caption settings -->
     <string name="pref_caption">Unlimited Captions</string>
-    <string name="pref_caption_explanation">Note: unlimited captions works for BOTH snaps taken with Snapchat\'s camera and snaps shared with Snapshare, so it\'s NOT limited to shared snaps.</string>
+    <string name="pref_caption_explanation">Note: unlimited captions works for BOTH snaps taken with Snapchat\'s camera and snaps shared from the Gallery, so it\'s NOT limited to shared snaps.</string>
 
     <string name="pref_caption_unlimited_vanilla_title">Unlimited regular captions</string>
     <string name="pref_caption_unlimited_vanilla_on">Regular captions are unlimited</string>
@@ -320,6 +324,7 @@
     <string name="pref_typing_title">Block typing and presence alert in chat</string>
     <string name="pref_typing_summary_on">They will be blocked</string>
     <string name="pref_typing_summary_off">They will NOT be blocked</string>
+    <string name="pref_group_unlim_title">Unlimited Groups (3+)</string>
     <string name="pref_viewed_summary_off">Stealth viewing will NOT be executed</string>
     <string name="pref_viewed_summary_on">Stealth viewing will be executed</string>
     <string name="pref_viewed_title">Stealth Viewing</string>
@@ -328,4 +333,14 @@
     <string name="pref_paint_cb_summary_off">Paint Tools are not enabled</string>
     <string name="pref_paint_cb_summary_on">Paint Tools are enabled</string>
     <string name="pref_paint_cb_title">Enable Paint Tools</string>
+    <string name="pref_timercounter_cb_summary">When enabled your taken video\'s length will be shown on the recording button during recording.</string>
+    <string name="pref_timercounter_cb_title">Enable Timer Counter</string>
+    <string name="pref_save_chat_image_title">Enable Chat image saving</string>
+    <string name="pref_save_chat_image_summary">When enabled long press on the image to save it</string>
+    <string name="pref_save_chat_text_title">Enable Chat text auto-save</string>
+    <string name="pref_save_chat_text_summary">When enabled sent/received Chats gets saved automatically</string>
+    <string name="pref_save_integration_title">Enable Snapchat integration</string>
+    <string name="pref_save_integration_summary">When enabled you can launch Snapprefs\'s settings by pulling down Snapchat\'s settings bar and clicking on Snapprefs</string>
+    <string name="licenses">Snapprefs is licensed under GNU GPLv3. \n\nUsed libraries - License:\nckChangeLog - Apache License 2.0\nColorPicker for Android - Apache Lic. 2.0\nNoNonsense-FilePicker - MPL 2.0\nmp4parser - Free License\n\nModule was originally based on:\nKeepchat - GNU GPLv3\nSnapshare - GNU GPLv3\n\nSnapchat™ is the property of Snapchat Inc.\nSnapprefs is in no way affiliated with, authorized, maintained, sponsored or endorsed by the Snapchat Inc. or any of its affiliates or subsidiaries. This is an independent application.</string>
+    <string name="hide_text">Show icon in launcher</string>
 </resources>

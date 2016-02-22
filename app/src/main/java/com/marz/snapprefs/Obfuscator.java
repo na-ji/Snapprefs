@@ -24,6 +24,7 @@ public class Obfuscator {
     public static final String SUPPORTED_VERSION_CODENAME = "9.21.1.0";
     public static final String ROOTDETECTOR_CLASS = "abc";
     public static final String[] ROOTDETECTOR_METHODS= {"b", "c", "d", "e"};
+    public static final String FRIENDS_BF= "k";
 
     /**
      * Check if Snapprefs is compatible with this Snapchat version.
@@ -215,6 +216,27 @@ public class Obfuscator {
         public static final String ADDER_3_PARAM = "SK$3";
         public static final String ADDER_PARAM = "SK";
         public static final String SNAPCHAPTUREDEVENT_CLASS = "Zs";
-
+    }
+    public class timer {
+        public static final String TAKESNAPBUTTON_CLASS = "com.snapchat.android.ui.camera.TakeSnapButton";
+        public static final String TAKESNAPBUTTON_ONDRAW = "onDraw";
+        public static final String TAKESNAPBUTTON_BLEAN1 = "b";
+        public static final String TAKESNAPBUTTON_BLEAN2 = "d";
+        public static final String TAKESNAPBUTTON_TIME = "a";
+        public static final String TAKESNAPBUTTON_X = "m";
+        public static final String TAKESNAPBUTTON_Y = "n";
+    }
+    public class chat {
+        public static final String CHAT_CLASS = "com.snapchat.android.model.chat.Chat";
+        public static final String MESSAGEVIEWHOLDER_CLASS = "com.snapchat.android.fragments.chat.MessageViewHolder";
+        public static final String MESSAGEVIEWHOLDER_METHOD = "b";
+        public static final String MESSAGEVIEWHOLDER_VAR1 = "F";
+        public static final String MESSAGEVIEWHOLDER_VAR2 = "d";
+        public static final String MESSAGEVIEWHOLDER_ISSAVED = "ak_";
+        public static final String MESSAGEVIEWHOLDER_SAVE = "z";
+    }
+    public class notification {
+        public static final String NOTIFICATION_CLASS_1 = "tX";
+        public static final String NOTIFICATION_CLASS_2 = "XU";
     }
 }

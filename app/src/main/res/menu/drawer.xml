@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+<item android:title="Main Menu"
+    android:id="@+id/nav_item_main"
+    android:icon="@drawable/main" />
+<item android:title="Premium / Deluxe"
+        android:id="@+id/nav_item_deluxe_section">
+        <menu>
+            <item
+                android:title="Buy / Activate membership"
+                android:id="@+id/nav_item_buy"
+                android:icon="@drawable/premium_buy"/>
+            <item
+                android:title="Premium &amp; Deluxe settings"
+                android:id="@+id/nav_item_deluxe"
+                android:icon="@drawable/premium"/>
+        </menu>
+</item>
+<item android:title="Settings"
+    android:id="@+id/nav_item_settings">
+    <menu>
+        <item
+            android:title="General"
+            android:id="@+id/nav_item_general"
+            android:icon="@drawable/general"/>
+        <item
+            android:title="Saving"
+            android:id="@+id/nav_item_saving"
+            android:icon="@drawable/save"/>
+        <item
+            android:title="Text customization"
+            android:id="@+id/nav_item_text"
+            android:icon="@drawable/text"/>
+        <item
+            android:title="Spoofing"
+            android:id="@+id/nav_item_spoofing"
+            android:icon="@drawable/spoofing"/>
+        <item
+            android:title="Sharing"
+            android:id="@+id/nav_item_sharing"
+            android:icon="@drawable/share"/>
+        <item
+            android:title="Data saving"
+            android:id="@+id/nav_item_data"
+            android:icon="@drawable/data_save"/>
+        <item
+            android:title="Visual Filters / Filters"
+            android:id="@+id/nav_item_filters"
+            android:icon="@drawable/filter"/>
+    </menu>
+</item>
+</menu>
