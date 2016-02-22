@@ -96,9 +96,11 @@ public class HookSendList {
                                     count++;
                                     if (count == 50 || i + 1 == types.length) {
                                         count = 0;
-                                        Logger.log("SnapPrefs: " + Integer.toString(loop * 50) + " - " + Integer.toString((loop+1) * 50) + " / " + types.length);
-                                        Toast.makeText(c, Integer.toString(loop * 50) + " - " + Integer.toString((loop+1) * 50) + " / " + types.length, Toast.LENGTH_SHORT).show();
-                                        if (!set) {
+                                        String max = Integer.toString(Math.min((loop + 1) * 50, types.length));
+                                        Logger.log("SnapPrefs: " + Integer.toString(loop * 50) + " - " + max + " / " + types.length);
+                                        if (set)
+                                            Toast.makeText(c, Integer.toString(loop * 50) + " - " + max + " / " + types.length, Toast.LENGTH_SHORT).show();
+                                        else {
                                             loop++;
                                             if (loop * 50 > types.length) {
                                                 loop = 0;
