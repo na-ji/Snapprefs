@@ -17,6 +17,16 @@
 
     <string name="hidebf_text">Hide Best-Friends</string>
     <string name="hidebf_summary">Hides your Best-Friends from you</string>
+
+    <string name="hidelive_text">Hide Live stories</string>
+    <string name="hidelive_summary">Hides the Live stories section on the Stories screen</string>
+    <string name="hidepeople_text">Hide People from Stories</string>
+    <string name="hidepeople_summary">Enables the option to hide certain people\'s stories</string>
+    <string name="showfavs_text">Show Favourites</string>
+    <string name="showfavs_summary">Shows only the Favourites on the Stories screen</string>
+    <string name="favsontop_text">Favourites on Top</string>
+    <string name="favsontop_summary">Displays the Favourites as first</string>
+
     <string name="hiderecent_text">Hide Recents</string>
     <string name="hiderecent_summary">Hides people who you recently sent a snap to</string>
 
@@ -32,26 +42,17 @@
     <string name="selectvenue_text">Including Local Venues</string>
     <string name="selectvenue_text_summary">Includes Local Venues to the Select-All function</string>
 
-    <string name="rainbow_text">Rainbow text</string>
-    <string name="rainbow_text_summary">Makes each letter separately colored</string>
-    <string name="txtcolour_text">Text colour customizations</string>
-    <string name="txtstyle_text">Custom text styles</string>
-    <string name="txtstyle_text_summary">Enables bold, italic and both styles</string>
-    <string name="txtgravity_text">Text gravity</string>
-    <string name="txtgravity_text_summary">Enables changes to the alignment of the text</string>
-    <string name="bgcolour_text">Background colour customization</string>
-    <string name="bg_transparency_text">Background opacity customization</string>
-    <string name="size_text">Text-size customization</string>
-    <string name="transparency_text">Caption opacity customization</string>
     <string name="debug_text">Debug mode</string>
     <string name="pref_update_title">To get the latest updates</string>
     <string name="pref_update_summary">Add \'snapprefs\' on Snapchat</string>
     <string name="version_text">Version</string>
-    <string name="version_summary" translatable="false">Current version is: v1.6.5</string>
+    <string name="version_summary" translatable="false">Current version is: v2.0.0</string>
     <string name="general">General settings</string>
     <string name="saving">Saving settings</string>
     <string name="sharing">Sharing settings</string>
     <string name="spoofing">Spoofing settings</string>
+    <string name="pref_text_title">Caption customization</string>
+    <string name="pref_text_summary">Enable countless text and background customization of captions</string>
     <string name="pref_speed_title">Speed spoofing</string>
     <string name="pref_speed_value_title">Current set speed:</string>
     <string name="pref_speed_summary_on">Enabled speed spoofing</string>
@@ -85,6 +86,9 @@
     <string name="pref_speed_how_summary">After typing in your desired speed (m/s), click on the speed filter to apply it.</string>
     <string name="pref_weather_how_title">HOW TO USE</string>
     <string name="pref_weather_how_summary">After typing in your desired value, you have to kill Snapchat, then restart to apply it.</string>
+    <string name="pref_storypreload_summary_off">Stories will be preloaded</string>
+    <string name="pref_storypreload_summary_on">Stories will NOT be preloaded</string>
+    <string name="pref_storypreload_title">Block Story preload</string>
     <string name="pref_discover_summary_off">Discover will load and download</string>
     <string name="pref_discover_summary_on">Discover will NOT load NOR download</string>
     <string name="pref_discover_title">Block Discover snaps</string>
@@ -116,6 +120,9 @@
 
     <!-- Saving settings -->
     <string name="pref_category_snapchats">Saving</string>
+    <string name="pref_save_button_position_title">Button position</string>
+    <string name="pref_save_button_position_summary_on">Save button position: LEFT</string>
+    <string name="pref_save_button_position_summary_off">Save button position: RIGHT</string>
     <string name="pref_save_snapchats_default" translatable="false">0</string>
     <string name="pref_save_snaps_images">Image snaps</string>
     <string name="pref_save_snaps_videos">Video snaps</string>
@@ -124,17 +131,33 @@
     <string name="pref_save_sent_snaps_title">Sent snaps</string>
     <string name="pref_save_sent_snaps_summary_on">Sent snaps will be saved</string>
     <string name="pref_save_sent_snaps_summary_off">Sent snaps won\'t be saved</string>
+    <string name="pref_save_snaps">Snap save mode</string>
+    <string name="pref_save_story">Story save mode</string>
+
+    <string-array name="pref_forcenavbar_entries">
+        <item>Force Navbar padding to hide</item>
+        <item>Force Navbar padding to show</item>
+        <item>Do nothing</item>
+    </string-array>
+
+    <string-array name="pref_forcenavbar_values" translatable="false">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
 
     <string-array name="pref_save_mode_entries">
-        <item>Save automatically</item>
+        <item>Save Button</item>
         <item>Sweep to save</item>
         <item>Don\'t save</item>
+        <item>Auto Save</item>
     </string-array>
 
     <string-array name="pref_save_mode_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- Viewing settings -->
@@ -153,6 +176,7 @@
     <string name="pref_video_looping_summary_off">Videos will play once</string>
     <string name="pref_video_looping_summary_on">Videos will be looped for as long as you want</string>
     <string name="pref_timer_minimum_title">Minimum timer duration</string>
+    <string name="pref_forcenavbar_default" translatable="false">0</string>
     <string name="pref_timer_minimum_default_value" translatable="false">0</string>
     <string-array name="pref_timer_minimum_entries">
         <item>Disabled</item>
@@ -200,6 +224,7 @@
     <string name="pref_vibration_summary_on">Vibration is enabled. Soft vibration means success, hard vibration means error.</string>
     <string name="pref_vibration_summary_off">Vibration is disabled</string>
     <string name="pref_toasts_duration_title">Toast duration</string>
+    <string name="pref_forcenavbar_title">Force Navbar padding</string>
     <string name="pref_toasts_duration_default_value" translatable="false">0</string>
     <string-array name="pref_toasts_duration_entries">
         <item>Short</item>
@@ -335,12 +360,12 @@
     <string name="pref_paint_cb_title">Enable Paint Tools</string>
     <string name="pref_timercounter_cb_summary">When enabled your taken video\'s length will be shown on the recording button during recording.</string>
     <string name="pref_timercounter_cb_title">Enable Timer Counter</string>
-    <string name="pref_save_chat_image_title">Enable Chat image saving</string>
-    <string name="pref_save_chat_image_summary">When enabled long press on the image to save it</string>
+    <string name="pref_save_chat_image_title">Enable Chat media saving</string>
+    <string name="pref_save_chat_image_summary">When enabled long press on the image when opened to save it, for  videos use the button.</string>
     <string name="pref_save_chat_text_title">Enable Chat text auto-save</string>
     <string name="pref_save_chat_text_summary">When enabled sent/received Chats gets saved automatically</string>
     <string name="pref_save_integration_title">Enable Snapchat integration</string>
     <string name="pref_save_integration_summary">When enabled you can launch Snapprefs\'s settings by pulling down Snapchat\'s settings bar and clicking on Snapprefs</string>
-    <string name="licenses">Snapprefs is licensed under GNU GPLv3. \n\nUsed libraries - License:\nckChangeLog - Apache License 2.0\nColorPicker for Android - Apache Lic. 2.0\nNoNonsense-FilePicker - MPL 2.0\nmp4parser - Free License\n\nModule was originally based on:\nKeepchat - GNU GPLv3\nSnapshare - GNU GPLv3\n\nSnapchat™ is the property of Snapchat Inc.\nSnapprefs is in no way affiliated with, authorized, maintained, sponsored or endorsed by the Snapchat Inc. or any of its affiliates or subsidiaries. This is an independent application.</string>
+    <string name="licenses">Snapprefs is licensed under GNU GPLv3. \n\nUsed libraries - License:\Instagram Filters for Android - Apache License 2.0\nckChangeLog - Apache License 2.0\nColorPicker for Android - Apache Lic. 2.0\nNoNonsense-FilePicker - MPL 2.0\nmp4parser - Free License\n\nModule was originally based on:\nKeepchat - GNU GPLv3\nSnapshare - GNU GPLv3\n\nSnapchat™ is the property of Snapchat Inc.\nSnapprefs is in no way affiliated with, authorized, maintained, sponsored or endorsed by the Snapchat Inc. or any of its affiliates or subsidiaries. This is an independent application.</string>
     <string name="hide_text">Show icon in launcher</string>
 </resources>

@@ -6,11 +6,14 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.SystemClock;
+import android.view.View;
 
 import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XC_MethodReplacement;
 import de.robv.android.xposed.XposedHelpers;
-import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+
+import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
 public class Misc {
     static void initTimer(final XC_LoadPackage.LoadPackageParam lpparam, final XModuleResources modRes) {
@@ -23,6 +26,7 @@ public class Misc {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 if (XposedHelpers.getBooleanField(param.thisObject, Obfuscator.timer.TAKESNAPBUTTON_BLEAN1) && XposedHelpers.getBooleanField(param.thisObject, Obfuscator.timer.TAKESNAPBUTTON_BLEAN2)) {
+                    HookedLayouts.upload.setVisibility(View.INVISIBLE); //When recording, hide the upload button
                     Canvas c = (Canvas) param.args[0];
                     long time = SystemClock.elapsedRealtime() - XposedHelpers.getLongField(param.thisObject, Obfuscator.timer.TAKESNAPBUTTON_TIME);
                     String t = String.valueOf(time / 1000);
@@ -32,5 +36,13 @@ public class Misc {
                 }
             }
         });
+    }
+
+    static void forceNavBar(final XC_LoadPackage.LoadPackageParam lpparam, int mode) {
+        if (mode == 1) {
+            findAndHookMethod(Obfuscator.navbar.FORCENAVBAR_CLASS, lpparam.classLoader, Obfuscator.navbar.FORCENAVBAR_METHOD, XC_MethodReplacement.returnConstant(true));
+        } else if (mode == 2) {
+            findAndHookMethod(Obfuscator.navbar.FORCENAVBAR_CLASS, lpparam.classLoader, Obfuscator.navbar.FORCENAVBAR_METHOD, XC_MethodReplacement.returnConstant(false));
+        }
     }
 }

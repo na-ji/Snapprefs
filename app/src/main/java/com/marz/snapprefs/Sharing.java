@@ -61,7 +61,7 @@ public class Sharing {
         findAndHookMethod("com.snapchat.android.LandingPageActivity", lpparam.classLoader, "onCreate", Bundle.class, new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                HookMethods.refreshPreferences();
+                Preferences.refreshPreferences();
                 XposedUtils.log("----------------- SNAPSHARE STARTED -----------------", false);
                 final Activity activity = (Activity) param.thisObject;
                 // Get intent, action and MIME type
@@ -75,7 +75,7 @@ public class Sharing {
                     Uri mediaUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
                     // Check for bogus call
                     if (mediaUri == null) {
-                        return;
+                            return;
                     }
                     /* We check if the current media got already initialized and should exit instead
                      * of doing the media initialization again. This check is necessary
@@ -201,7 +201,7 @@ public class Sharing {
         XC_MethodHook cameraLoadedHook = new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                HookMethods.refreshPreferences(); // Refresh preferences for captions
+                Preferences.refreshPreferences(); // Refresh preferences for captions
                 if (initializedUri == null) {
                     return; // We don't have an image to send, so don't try to send one
                 }
@@ -233,7 +233,7 @@ public class Sharing {
                         setObjectField(getObjectField(Ue, "mMediabryo"), "mSnapType", snapType);
                     }
                 });*/
-                findAndHookMethod("com.snapchat.android.camera.CameraFragment", lpparam.classLoader, "a", Uri.class, int.class, new XC_MethodHook() {
+                findAndHookMethod("com.snapchat.android.camera.CameraFragment", lpparam.classLoader, "a", Uri.class, int.class, boolean.class, new XC_MethodHook() {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                         param.args[0] = mediaVid.getContent();
